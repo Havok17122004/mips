@@ -1,0 +1,3 @@
+j 10 jump to address 10
+jr r0 jump to address stored in register r0
+jal 10 ra=PC+4 and jump to address 10

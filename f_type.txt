@@ -1,0 +1,10 @@
+add.s f0,f1, f2 f0=f1+f2
+sub.s f0,f1, f2 f0=f1-f2
+c.eq.s cc f0, f1 the flag cc is set to one if f0=f1
+c.le.s cc f0, f1 the flag cc is set to one if f0<=f1
+c.lt.s cc f0, f1 the flag cc is set to one if f0<f1
+c.ge.s cc f0, f1 the flag cc is set to one if f0>=f1
+c.gt.s cc f0, f1 the flag cc is set to one if f0>f1
+mov.s cc f0, f1 
+mfcl r0, f0 r0=f0
+mtc1 f0,r0 f0=r0

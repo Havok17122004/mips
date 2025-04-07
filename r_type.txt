@@ -1,0 +1,12 @@
+add r0, r1, r2 r0=r1+r2
+sub r0, r1, r2 r0=r1-r2
+addu r0, r1, r2 r0=r1+r2 (unsigned addition, not 2’s complement)
+subu r0,r1,r2 r0=r1-r2 (unsigned addition, not 2’s complement)
+madd r0,r1 r0*r1 added with the value in the concatenated registers lo and hi.
+maddu r0,r1 unsigned version of madd
+mul r0,r1 hi=z[63:32],lo=z[31:0], Z=r0*r1
+and r0,r1,r2 r0= r1 & r2
+or r0,r1,r2 r0=r1 | r2
+not r0,r1 ro=r1
+xor, r0,r1,r2 r= r1 xor r2
+slt r0,r1,r2 if(r1<r2) r0=1 else r0=0

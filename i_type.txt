@@ -1,0 +1,22 @@
+addi r0,r1,1000 r0=r1+1000
+addiu r0,r1, 1000 r0=r1+1000 (unsigned additon, not 2’s complement)
+andi r0,r1, 1000 r0= r1 & 1000
+ori r0,r1, 1000 r0= r1 | 1000
+xori, r0,r1,1000 r0=r1 xor 1000
+sll r0, r1, 10 r0=r1<<10 (shift left logical)
+srl r0, r1, 10 r0=r1>>10 (shift right logical)
+sla r0, r1, 10 r0=r1<<10 (shift left arithmetic)
+sra r0, r1, 10 r0=r1>>10 (shift right arithmetic)
+lw r0,10(r1) r0=Memory[r1+10] (load word)
+sw r0,10(r1) Memory[r1+10]=r0 (store word)
+lui r0, 1000 r0[31:16]=1000
+beq r0,r1,10 if(r0==r1) go to PC+4+10 (branch on equal)
+bne r0,r1,10 if(r0!=r1) go to PC+4+10 (branch on not equal)
+bgt r0,r1,10 if(r0>r1) go to PC+4+10 (branch if greater than)
+bgte r0,r1, 10 if(r0>=r1) go to PC+4+10 (branch if greter than or equal)
+ble r0,r1, 10 if(r0<r1) go to PC+4+10 (branch if less than)
+bleq r0,r1, 10 if(r0<=r1) go to PC+4+10 (branch if less than or equal)
+bleu r0,r1, 10 unsigned version of ble
+bgtu r0,r1, 10 unsigned version of bgt
+slti r0,r1,100 if(r1<100) r0=1 else r0=0
+seq r0,r1,100 if(r1=100) r0=1 else r0=0
