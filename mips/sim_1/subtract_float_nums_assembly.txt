@@ -5,3 +5,8 @@ lui 2,16384
 mtc1 2,2
 sub.s 4,2,1
 mfc1 5,4
+print.s 1
+print.s 2
+print.s 5
+print 5
+finish

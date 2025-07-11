@@ -16,8 +16,8 @@ wire [31:0] instr;
 //wire [31:0] general_reg_read1_out;
 //wire [31:0] general_reg_read2_out;
 //wire [31:0] general_final_read2_out;
-wire [31:0] write_data;
-wire [4:0]  write_reg;
+// wire [31:0] write_data;
+// wire [4:0]  write_reg;
 //wire        GeneralRegWrite;
 //wire        GeneralZero;
 //wire        GeneralGt;
@@ -45,27 +45,29 @@ wire [4:0]  write_reg;
 //wire        Zero;
 //wire        Gt;
 //wire [31:0] Result;
-wire [31:0] hi;
-wire [31:0] lo;
-//wire [31:0] MemOut;
+wire End_signal;
+wire Print;
+wire [31:0] toBePrinted;
 
-//wire [31:0] sign_extended_imm;
+// Remove or comment out unused outputs
+// wire [9:0]  pc;
+// wire [31:0] instr;
+// wire [31:0] write_data;
+// wire [4:0]  write_reg;
+// wire [31:0] hi;
+// wire [31:0] lo;
 
 processor uut(
-    clk,
-    rst,
-    init_pc,
-    instr_we,
-    instr_feed,
-    instr_write_address,
-//    pc,                     // current program counter
-//    instr,                 // current instruction
-    write_data,
-    write_reg,
-    hi,
-    lo
+    .clk(clk),
+    .rst(rst),
+    .init_pc(init_pc),
+    .instr_we(instr_we),
+    .instr_feed(instr_feed),
+    .instr_write_address(instr_write_address),
+    .End_signal(End_signal),
+    .Print(Print),
+    .toBePrinted(toBePrinted)
 );
-
 
     // DUT instantiation
 //processor uut (
@@ -137,6 +139,12 @@ processor uut(
 //        $monitor("%4dns   %b    %b    %3d       %b      %032b / 0x%08h",
 //                 $time, clk, rst, init_pc, instr_we, instr_feed, instr_feed);
 //    end
+    always @(posedge clk) begin
+        if (Print)
+            $display("[%0dns] toBePrinted = 0x%08h (%0d)", $time, toBePrinted, toBePrinted);
+        if (End_signal)
+            $finish;
+    end
 
     initial begin
         $display("\n================== Simulation Start ==================");

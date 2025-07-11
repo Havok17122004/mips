@@ -5,7 +5,7 @@ module ALU(
     input [31:0] B,
     input [3:0] AluCtl,
     output reg [31:0] Result,
-    output reg Zero, Gt,
+    // output reg Zero, Gt,
     output reg [31:0] hi, lo
 );
 reg [63:0] temp;
@@ -14,8 +14,8 @@ reg [63:0] temp;
 always@(*) begin
     temp = 0;
     Result = 0;
-    Zero = 1;
-    Gt = 0;
+    // Zero = 1;
+    // Gt = 0;
     case(AluCtl)
         4'd0: Result = $signed(A) + $signed(B); //add
         4'd1: Result = $unsigned(A) + $unsigned(B); //addu
@@ -47,8 +47,8 @@ always@(*) begin
            end        
         default : Result = 32'd0;
     endcase
-    Zero = ($signed(Result) == 0);
-    Gt = ($signed(Result) > 0);
+    // Zero = ($signed(Result) == 0);
+    // Gt = ($signed(Result) > 0);
 end
 
 endmodule

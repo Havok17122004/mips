@@ -24,7 +24,7 @@ module FPU(
     input [31:0] A, B,
     input [3:0] AluOp,
     output reg [31:0] Result,
-    output reg Zero, Gt
+    // output reg Zero, Gt
     );
      wire c_out;
    wire [31:0] less,greater,equal,sum_out1,sum_out2,sub_out; 
@@ -64,8 +64,8 @@ module FPU(
         Result <= less || equal;
         end
         endcase
-        Zero = equal;
-        Gt = greater;
+        // Zero = equal;
+        // Gt = greater;
     end
     
 endmodule

@@ -15,12 +15,12 @@ sw 6,5(10)
 sw 7,6(10)
 addi 27,0,7
 addi 20,0,1
-bge 20,27,17
+bgte 20,27,17
 add 21,0,20
 add 21,21,10 
 lw  22,0(21)
 addi 23,20,-1 
-blt 23,0,7 
+ble 23,0,7 
 add 24,0,23
 add 24,24,10 
 lw  25,0(24)
@@ -41,3 +41,11 @@ lw 5,4(10)
 lw 6,5(10)
 lw 7,6(10)
 lw 8,7(10)
+print 1
+print 2
+print 3
+print 4
+print 5
+print 6 
+print 7
+print 8
